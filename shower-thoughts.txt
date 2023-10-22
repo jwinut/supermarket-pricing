@@ -1,0 +1,23 @@
+does fractional money exist?
+-> in calculation, yes but rounding (down?) for POS when provide changes to buyers
+
+when (if ever) does rounding take place?
+-> when provide changes to buyers. example: total (include tax) = 2.135 then -> 2.15. depends on the available coins or smallest notes too.
+
+how do you keep an audit trail of pricing decisions (and do you need to)?
+-> in terms of finance books, not sure. in terms of data, absolutely. this trail provides evidence when system is compromised or price calculation has issues.
+-> simple relational table
+-> | SKU | new price | old price | date | change reason |
+
+are costs and prices the same class of thing?
+-> absolutely not.
+
+if a shelf of 100 cans is priced using “buy two, get one free”, how do you value the stock?
+-> since the promo usually is seasonal or time-limited. stock of 100 cans should be value as normal.
+-> given a can is priced at $2, stock value = $2 * 100.
+-> minimum revenue from 100-can-stock calculate by
+-> finding how many cans left from the stock if everything is sold through promo (100 % 3 = 1)
+-> finding how many bundle (buy 2 free 1) can be sold (100/3 = 33)
+-> each bundle cost $4 meaning total minimum revenue = ($4 * 33) + ($2 * 1)
+-> maximum revenue is achieved when customers buy only 1 for 100 times
+-> discount back $2 from free item into total revenue number (not stock value)
